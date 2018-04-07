@@ -12,7 +12,8 @@ export default class Register extends Component {
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            buttonText: "Sign up"
         }
 
         this.emailchangeState = this.emailchangeState.bind(this);
@@ -35,7 +36,10 @@ export default class Register extends Component {
     }
 
     createUser() {
-        userActions.createUser(this.state)
+        userActions.createUser(this.state);
+        this.setState({
+            buttonText: "...loading"
+        })
     }
     
     render() {
@@ -45,7 +49,7 @@ export default class Register extends Component {
                     <H3 tag="create an account" />
                     <Auth onEmailChange={this.emailchangeState} onPasswordChange={this.passwordChangeState} />
                     <Button onClick={this.createUser}>
-                        Sign up
+                        {this.state.buttonText}
                     </Button>
                 </Modal>
             </div>

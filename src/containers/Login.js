@@ -12,7 +12,8 @@ export default class Login extends Component {
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            buttonText: "Log in"
         }
 
         this.emailchangeState = this.emailchangeState.bind(this);
@@ -35,7 +36,10 @@ export default class Login extends Component {
     }
 
     login() {
-        userActions.loginUser(this.state)
+        userActions.loginUser(this.state);
+        this.setState({
+            buttonText: "...loading"
+        })
     }
     render() {
         return (
@@ -44,7 +48,7 @@ export default class Login extends Component {
                     <H3 tag="Log in into your account" />
                     <Auth onEmailChange={this.emailchangeState} onPasswordChange={this.passwordChangeState} />
                     <Button onClick={this.login}>
-                        Log In
+                        {this.state.buttonText}
                     </Button>
                 </Modal>
             </div>

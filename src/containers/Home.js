@@ -12,7 +12,8 @@ export default class Home extends Component {
         super(props);
 
         this.state = {
-            title: ""
+            title: "",
+            buttonText: "Add Todo"
         }
 
         this.titleChange = this.titleChange.bind(this);
@@ -27,18 +28,21 @@ export default class Home extends Component {
     }
 
     createTodo() {
-        todoActions.createTodo(this.state)
+        todoActions.createTodo(this.state);
+        this.setState({
+            buttonText: "...loading"
+        })
     }
     
     render() {
         return (
             <div>
                 <Header />
-                <Modal button="All my notes" link="/todos">
+                <Modal button="MY TODOS" link="/todos">
                     <H3 tag="create todo" />
                     <Todo onEmailChange={this.emailchangeState} titleChange={this.titleChange} />
                     <Button onClick={this.createTodo}>
-                        Add todo
+                        {this.state.buttonText}
                     </Button>
                 </Modal>
             </div>

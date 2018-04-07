@@ -11,7 +11,7 @@ h3 {
     padding: 40px;
     color: #79589f;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -112,4 +112,13 @@ nav ul {
 
 .card-header {
     color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+
+.card-header a {
+    color: green;
+    font-size: 13px;
 }

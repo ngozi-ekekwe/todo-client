@@ -9,6 +9,7 @@ import * as todoActions from '../actions/todoActions'
 import axios from 'axios';
 import constants from '../constants';
 import moment from 'moment'
+import toastr from 'toastr'
 
 const BASE_URL ="https://todouserapi.herokuapp.com";
 
@@ -60,8 +61,18 @@ export default class Todos extends Component {
             }); 
     }
 
-    
-    
+    delete(e, id, index) {
+        e.preventDefault();
+        let userId = localStorage.getItem('userId');
+        axios.delete(`https://todouserapi.herokuapp.com/api/${id}/todo/${userId}`)
+            .then((response) => {
+            })
+            .catch((err) => {
+                if (err) {
+                }
+            }); 
+    }
+
     render() {
         return (
             <div>
@@ -74,7 +85,14 @@ export default class Todos extends Component {
                             this.state.todos.map((result, key) => {
                                     return (
                                         <a href="" key={key} className="movie-card">
-                                            <Card index={key} id={result.id} title={result.title} date={moment(result.createdAt).format('MMM Do YY')} updateNote={this.updateNote} complete={result.complete} />
+                                            <Card 
+                                                index={key} 
+                                                id={result.id} 
+                                                title={result.title} 
+                                                date={moment(result.createdAt).format('MMM D, YYYY')} 
+                                                updateNote={this.updateNote} 
+                                                complete={result.complete}
+                                                delete={this.delete} />
                                         </a>
                                     )
                                 })
@@ -83,8 +101,8 @@ export default class Todos extends Component {
 
                     }
                     {  this.state.todos.length == 0 &&
-                        <Modal button="START ADDING NOTES" link="/">
-                            <H3 tag="You have not craeted any todo" />
+                        <Modal button="START ADDING TODOS ROCKSTAR" link="/">
+                            <H3 tag="You are almost there" />
                         </Modal>
                     }
 

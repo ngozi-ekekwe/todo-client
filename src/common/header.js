@@ -24,11 +24,11 @@ class Header extends Component  {
                         <ul className="navbar-nav">
 
                          <li class="nav-item">
-                            <a class="nav-link" href="/">Add Note</a>
+                            <a class="nav-link" href="/">ADD TODO</a>
                         </li>
 
                          <li class="nav-item">
-                            <a class="nav-link" href="/todos">Saved Todos</a>
+                            <a class="nav-link" href="/todos">SAVED TODOS</a>
                         </li>
                        
 
@@ -38,7 +38,7 @@ class Header extends Component  {
                                 localStorage.removeItem('token');
                                 localStorage.removeItem('userId');
 
-                            }}>Log out</a>
+                            }}>LOG OUT</a>
                         </li>
                         </ul>
                     </div>
