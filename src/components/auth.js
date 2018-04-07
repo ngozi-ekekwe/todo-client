@@ -2,7 +2,7 @@ import React from 'react';
 
 const Auth = (props) => {
     return (
-        <form action="/login" method="post" role="form">
+        <form action="/login" method="post">
             <div className="row">
                 <input type="text" className="form-control" placeholder="email" onChange={props.onEmailChange} />
             </div>  

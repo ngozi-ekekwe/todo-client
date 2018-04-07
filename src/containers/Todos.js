@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import Header from '../common/header';
 import Modal from '../components/modal';
-import Button from '../components/button';
-import Todo from '../components/todoForm';
 import H3 from '../components/h3';
 import Card from '../components/card'
-import * as todoActions from '../actions/todoActions'
 import axios from 'axios';
-import constants from '../constants';
 import moment from 'moment'
-import toastr from 'toastr'
-
-const BASE_URL ="https://todouserapi.herokuapp.com";
 
 export default class Todos extends Component {
 
@@ -100,7 +93,7 @@ export default class Todos extends Component {
                         </div>
 
                     }
-                    {  this.state.todos.length == 0 &&
+                    {  this.state.todos.length === 0 &&
                         <Modal button="START ADDING TODOS ROCKSTAR" link="/">
                             <H3 tag="You are almost there" />
                         </Modal>

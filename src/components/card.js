@@ -1,5 +1,4 @@
 import React from 'react';
-import H3 from '../components/h3';
 import Button from '../components/button';
 
 

@@ -2,10 +2,7 @@ import React, { Component} from 'react';
 
 class Header extends Component  {
 
-    constructor(props) {
-        super(props)
-    }
-
+    
     componentDidMount() {
         let token = localStorage.getItem('token');
         if (!token) {
