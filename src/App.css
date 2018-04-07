@@ -17,6 +17,10 @@ h3 {
     text-transform: uppercase;
 }
 
+a:hover{
+    text-decoration: none
+}
+
 form {
     padding: 0px 40px;
 }
@@ -83,7 +87,7 @@ nav ul {
     display: flex;
     margin-top: 10px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 0 1.5rem;
 
 }
@@ -94,7 +98,7 @@ nav ul {
 }
 
 .movie-card + .movie-card {
-    /* margin-left: 20px; */
+    margin-left: 5px;
 }
 
 @media screen and (min-width: 768px){
@@ -106,4 +110,8 @@ nav ul {
 
 .card-body {
     color: black
+}
+
+.card-header {
+    color: black;
 }

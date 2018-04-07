@@ -21,7 +21,6 @@ export const listTodos = () => {
     axios.get(constants.LIST_TODO)
         .then((response) => {
             return response.data.message
-            console.log(response.data.message)
         })
         .catch((err) => {
             if (err) {
@@ -29,9 +28,7 @@ export const listTodos = () => {
         }); 
 }
 
-export const returnUsersTodos = () => {
 
-}
 
 export const updateTodo = () => {
 

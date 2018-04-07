@@ -1,5 +1,6 @@
 const BASE_URL ="https://todouserapi.herokuapp.com";
 
+
 const userConstants = {
 
     CREATE_USER: BASE_URL + "/api/user",
@@ -13,6 +14,8 @@ const userConstants = {
     UPDATE_TODO: BASE_URL + "/api/:todoId/todo/userId",
 
     DELETE_TODO: BASE_URL + "/api/:todoId/todo/userId",
+
+    GET_USER_TODOS: BASE_URL + "/api/user/todos/:userId"
 }
 
 export default userConstants;

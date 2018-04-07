@@ -19,10 +19,8 @@ export const createUser = (user) => {
 };
 
 export const loginUser = (user) => {
-    console.log('I got called')
     axios.post(constants.LOG_IN, user)
         .then((response) => {
-            console.log(response.data)
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('userId', response.data.userIdentity)
             if (response.data.token) {

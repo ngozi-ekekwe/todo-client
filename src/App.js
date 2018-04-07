@@ -10,28 +10,12 @@ import Todos from './containers/Todos';
 
 class App extends Component {
 
-  checkIfLoggedIn(nextState, replace) {
-    console.log('got called')
-    const token = JSON.parse(localStorage.getItem('token'));
-    if (!token) {
-       replace({ pathname: '/login' });
-    }
-   }
-   
-   logUserOut(nextState, replace, done) {
-     const token = JSON.parse(localStorage.getItem('token'));
-     if (token) {
-       replace({ pathname: '/login' });
-     }
-     localStorage.removeItem("currentUser");
-     window.location = '/';
-   }
-
+  
   render() {
     return (
       <div className="App">
         <Switch>
-          <Route path="/" exact component={Home} onEnter={this.checkIfLoggedIn} />
+          <Route path="/" exact component={Home}  />
           <Route path="/login"  component={Login} />
           <Route path="/signup"  component={Signup} />
           <Route path="/todos"  component={Todos} />
