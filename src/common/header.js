@@ -9,7 +9,7 @@ class Header extends Component  {
     componentDidMount() {
         let token = localStorage.getItem('token');
         if (!token) {
-            window.location = "/login";
+            window.location = "/signup";
         }
     }
     render () {

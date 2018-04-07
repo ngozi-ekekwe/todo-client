@@ -35,7 +35,6 @@ export default class Todos extends Component {
         let userId = localStorage.getItem('userId');
         axios.get(`https://todouserapi.herokuapp.com/api/user/todos/${userId}`)
             .then((response) => {
-                // console.log(response.data.todo)
                 this.setState({
                     todos: response.data.todo
                 })

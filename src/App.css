@@ -5,14 +5,13 @@
     border-radius: 8px;
     margin-top: 200px;
     background-color: white;
-    /* padding: 0 40px; */
 }
 
 h3 {
     padding: 40px;
     color: #79589f;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 20px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -87,7 +86,6 @@ nav ul {
     display: flex;
     margin-top: 10px;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
     padding: 0 1.5rem;
 
 }

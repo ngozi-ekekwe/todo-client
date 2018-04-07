@@ -4,7 +4,6 @@ import Button from '../components/button';
 
 
 const Card = (props) => {
-    console.log(props.complete)
     return (
 
         <div className="card">
