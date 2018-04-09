@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch} from 'react-router-dom';
-import './App.css';
 
 import Home from './containers/Home';
 import Login from './containers/Login';
 import Signup from './containers/Signup';
 import Todos from './containers/Todos';
+import './App.css';
 
 class App extends Component {
 

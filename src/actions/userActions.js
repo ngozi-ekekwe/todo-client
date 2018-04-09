@@ -1,5 +1,21 @@
 import axios from 'axios';
+import * as types from './actionTypes';
 import constants from '../constants';
+
+export const createUserSuccess = (user) => {
+    type: types.CREATE_USER,
+    user
+}
+
+export const loginSuccess = (user) => {
+    type: types.LOGIN_USER,
+    user
+}
+
+export const logoutSuccess = (user) => {
+    type: types.LOGOUT_USER,
+    user
+}
 
 
 export const createUser = (user) => {
