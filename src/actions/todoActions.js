@@ -15,14 +15,3 @@ export const createTodo = (todo) => {
         }); 
 }
 
-export const listTodos = () => {
-    axios.get(constants.LIST_TODO)
-        .then((response) => {
-            return response.data.message
-        })
-        .catch((err) => {
-            if (err) {
-            }
-        }); 
-}
-
