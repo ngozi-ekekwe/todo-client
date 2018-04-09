@@ -1,8 +1,7 @@
 import React, { Component} from 'react';
 
 class Header extends Component  {
-
-    
+ 
     componentDidMount() {
         let token = localStorage.getItem('token');
         if (!token) {
@@ -26,10 +25,7 @@ class Header extends Component  {
 
                          <li class="nav-item">
                             <a class="nav-link" href="/todos">SAVED TODOS</a>
-                        </li>
-                       
-
-                        
+                        </li>    
                         <li class="nav-item">
                             <a class="nav-link" href="/login" onClick={(e) => {
                                 localStorage.removeItem('token');

@@ -4,7 +4,6 @@ import Button from '../components/button';
 
 const Card = (props) => {
     return (
-
         <div className="card">
             <div className="card-header">
                 {props.date}
@@ -12,8 +11,7 @@ const Card = (props) => {
                     <li className="nav-item">
                         <a className="nav-link" href="" onClick={(event) => props.delete(event, props.id, props.index)}>X</a>
                     </li>
-                </ul>
-                
+                </ul> 
             </div>
             <div className="card-body">
                 <h6 className="card-title">{props.title}</h6>
@@ -28,7 +26,6 @@ const Card = (props) => {
                 <Button onClick={(event) => props.updateNote(event, props.id, props.index)} color="green">
                     COMPLETE
                 </Button>
-
             }
         </div>
 

@@ -12,7 +12,6 @@ const Modal = (props) => {
                         }
                     </a>
                 </div>
-
             </div>
         </div>
     )

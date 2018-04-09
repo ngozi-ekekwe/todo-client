@@ -5,5 +5,4 @@ const H3 = (props) => {
         <h3>{props.tag}</h3>
     )
 }
-
 export default H3;

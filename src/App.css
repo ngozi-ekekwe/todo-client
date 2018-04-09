@@ -82,7 +82,7 @@ nav ul {
     font-size: 13px;
 }
 
-.movies-display {
+.card-display {
     display: flex;
     margin-top: 10px;
     flex-wrap: wrap;
@@ -90,17 +90,17 @@ nav ul {
 
 }
 
-.movie-card {
+.dp-card {
     width: 100%;
     margin-bottom: 25px;   
 }
 
-.movie-card + .movie-card {
+.dp-card + .dp-card {
     margin-left: 5px;
 }
 
 @media screen and (min-width: 768px){
-    .movie-card {
+    .dp-card {
         width: calc((100% - (20px *2))/4);
         margin-bottom: 25px;  
     }   

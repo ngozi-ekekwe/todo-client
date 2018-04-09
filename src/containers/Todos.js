@@ -17,8 +17,7 @@ export default class Todos extends Component {
 
         this.listTodos = this.listTodos.bind(this);
         this.updateNote = this.updateNote.bind(this);
-
-        
+        this.delete = this.delete.bind(this);
     }
 
     componentDidMount() {
@@ -59,6 +58,9 @@ export default class Todos extends Component {
         let userId = localStorage.getItem('userId');
         axios.delete(`https://todouserapi.herokuapp.com/api/${id}/todo/${userId}`)
             .then((response) => {
+                const allTodos = Object.assign(this.state.todos);
+                allTodos.splice(index, 1);
+                this.setState({todos: allTodos});
             })
             .catch((err) => {
                 if (err) {
@@ -71,13 +73,12 @@ export default class Todos extends Component {
             <div>
                 <Header />
                     <div>
-
                     {  this.state.todos &&
-                        <div className="movies-display"> 
+                        <div className="card-display"> 
                             {
                             this.state.todos.map((result, key) => {
                                     return (
-                                        <a href="" key={key} className="movie-card">
+                                        <a href="" key={key} className="dp-card">
                                             <Card 
                                                 index={key} 
                                                 id={result.id} 
