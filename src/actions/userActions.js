@@ -29,7 +29,6 @@ export const createUser = (user) => {
         })
         .catch((err) => {
             if (err) {
-                // toastr.error(err)
             }
         }); 
 };
@@ -45,7 +44,6 @@ export const loginUser = (user) => {
         })
         .catch((err) => {
             if (err) {
-                // toastr.error(err)
             }
         });
 }
