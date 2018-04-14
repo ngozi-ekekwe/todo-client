@@ -1,13 +1,31 @@
 import React, { Component} from 'react';
+import { browserHistory } from 'react-router-dom';
 
 class Header extends Component  {
- 
+
+    constructor(props) {
+        super(props);
+
+        this.logout = this.logout.bind(this);
+    }
+
     componentDidMount() {
         let token = localStorage.getItem('token');
         if (!token) {
             window.location = "/signup";
         }
     }
+
+    logout() {
+        let token = localStorage.getItem('token');
+        if (token) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userId');
+            window.location = "/";
+        }   
+    }
+ 
+    
     render () {
         return(
             <header>
@@ -27,11 +45,7 @@ class Header extends Component  {
                             <a class="nav-link" href="/todos">SAVED TODOS</a>
                         </li>    
                         <li class="nav-item">
-                            <a class="nav-link" href="/login" onClick={(e) => {
-                                localStorage.removeItem('token');
-                                localStorage.removeItem('userId');
-
-                            }}>LOG OUT</a>
+                            <a class="nav-link" href="/login" onClick={this.logout}>LOG OUT</a>
                         </li>
                         </ul>
                     </div>
@@ -40,5 +54,4 @@ class Header extends Component  {
         )
     }
 }
-
 export default Header;

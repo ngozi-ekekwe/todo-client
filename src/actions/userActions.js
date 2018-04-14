@@ -1,26 +1,11 @@
 import axios from 'axios';
-import * as types from './actionTypes';
 import constants from '../constants';
-
-export const createUserSuccess = (user) => {
-    type: types.CREATE_USER,
-    user
-}
-
-export const loginSuccess = (user) => {
-    type: types.LOGIN_USER,
-    user
-}
-
-export const logoutSuccess = (user) => {
-    type: types.LOGOUT_USER,
-    user
-}
-
+import toastr from 'toastr';
 
 export const createUser = (user) => {
     axios.post(constants.CREATE_USER, user)
         .then((response) => {
+            toastr.success(response.data.message)
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('userId', response.data.userId)
             if (response.data.token) {
@@ -36,6 +21,7 @@ export const createUser = (user) => {
 export const loginUser = (user) => {
     axios.post(constants.LOG_IN, user)
         .then((response) => {
+            toastr.success(response.data.message)
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('userId', response.data.userIdentity)
             if (response.data.token) {
@@ -48,8 +34,5 @@ export const loginUser = (user) => {
         });
 }
 
-export const logout = () => {
-
-}
 
 

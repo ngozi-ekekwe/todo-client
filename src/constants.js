@@ -1,7 +1,7 @@
 const BASE_URL ="https://todouserapi.herokuapp.com";
 
 
-const userConstants = {
+export const userConstants = {
 
     CREATE_USER: BASE_URL + "/api/user",
 
@@ -19,3 +19,13 @@ const userConstants = {
 }
 
 export default userConstants;
+
+// export const buildURL = (type) => {
+//     return `https://todouserapi.herokuapp.com${type}`
+// }
+
+// // buildURL(userConstants.LOG_IN)
+
+// import {userConstants, buildURL} from './'
+
+// buildURL(userConstants.LOG_IN)

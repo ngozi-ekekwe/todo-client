@@ -27,7 +27,8 @@ export default class Home extends Component {
         })
     }
 
-    createTodo() {
+    createTodo(e) {
+        e.preventDefault();
         todoActions.createTodo(this.state);
         this.setState({
             buttonText: "...loading"
@@ -40,7 +41,7 @@ export default class Home extends Component {
                 <Header />
                 <Modal button="MY TODOS" link="/todos">
                     <H3 tag="create todo" />
-                    <Todo onEmailChange={this.emailchangeState} titleChange={this.titleChange} />
+                    <Todo onEmailChange={this.emailchangeState} titleChange={this.titleChange} onSubmit={this.createTodo} />
                     <Button onClick={this.createTodo}>
                         {this.state.buttonText}
                     </Button>
