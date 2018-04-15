@@ -43,6 +43,10 @@ class Header extends Component  {
 
                          <li class="nav-item">
                             <a class="nav-link" href="/todos">SAVED TODOS</a>
+                        </li>   
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/todos">HIDDEN TODOS</a>
                         </li>    
                         <li class="nav-item">
                             <a class="nav-link" href="/login" onClick={this.logout}>LOG OUT</a>

@@ -4,7 +4,9 @@ import Modal from '../components/modal';
 import H3 from '../components/h3';
 import Card from '../components/card'
 import axios from 'axios';
-import moment from 'moment'
+import moment from 'moment';
+import { Link } from 'react-router-dom';
+
 
 export default class Todos extends Component {
 
@@ -16,7 +18,7 @@ export default class Todos extends Component {
         }
 
         this.listTodos = this.listTodos.bind(this);
-        this.updateNote = this.updateNote.bind(this);
+        this.completeTodo = this.completeTodo.bind(this);
         this.delete = this.delete.bind(this);
     }
 
@@ -38,7 +40,7 @@ export default class Todos extends Component {
             }); 
     }
 
-    updateNote(e, id, index) {
+    completeTodo(e, id, index) {
         e.preventDefault();
         let userId = localStorage.getItem('userId');
         axios.put(`https://todouserapi.herokuapp.com/api/${id}/todo/${userId}`, {complete: true})
@@ -78,16 +80,16 @@ export default class Todos extends Component {
                             {
                             this.state.todos.map((result, key) => {
                                     return (
-                                        <a href="" key={key} className="dp-card">
+                                        <Link to={`/todos/${result.id}/edit?title=${result.title}`} key={key} className="dp-card">
                                             <Card 
                                                 index={key} 
                                                 id={result.id} 
                                                 title={result.title} 
                                                 date={moment(result.createdAt).format('MMM D, YYYY')} 
-                                                updateNote={this.updateNote} 
+                                                completeTodo={this.completeTodo} 
                                                 complete={result.complete}
                                                 delete={this.delete} />
-                                        </a>
+                                        </Link>
                                     )
                                 })
                             }

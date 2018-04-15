@@ -5,6 +5,7 @@ import Home from './containers/Home';
 import Login from './containers/Login';
 import Signup from './containers/Signup';
 import Todos from './containers/Todos';
+import Edit from './containers/Edit';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route path="/" exact component={Home}  />
           <Route path="/login"  component={Login} />
           <Route path="/signup"  component={Signup} />
+          <Route path="/todos/:id/edit"  component={Edit} />
           <Route path="/todos"  component={Todos}  />
           <Route path="/logout"  />
         </Switch>

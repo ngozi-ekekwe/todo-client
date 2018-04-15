@@ -122,3 +122,19 @@ nav ul {
     color: green;
     font-size: 13px;
 }
+
+.fa-trash-alt {
+    color: red;
+}
+
+.list-group-item {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+
+.list-group-item span {
+    font-weight: bold;
+}
