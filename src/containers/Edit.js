@@ -4,7 +4,6 @@ import Modal from '../components/modal';
 import Button from '../components/button';
 import Todo from '../components/todoForm';
 import H3 from '../components/h3';
-import * as todoActions from '../actions/todoActions';
 import axios from 'axios';
 
 export default class Edit extends Component {
@@ -14,6 +13,7 @@ export default class Edit extends Component {
 
         this.state = {
             title: "",
+            dayMarkedForCompletion: "",
             buttonText: "Update Todo"
         }
 
@@ -31,13 +31,16 @@ export default class Edit extends Component {
 
     UpdateTodo(e, index) {
         e.preventDefault();
-        console.log(this.props.match)
         let userId = localStorage.getItem('userId');
         let id =  this.props.match.params.id
         this.setState({
             buttonText: "...Updating"
         })
-        axios.put(`https://todouserapi.herokuapp.com/api/${id}/todo/${userId}`, {title: this.state.title})
+        let body = {
+            title: this.state.title, 
+            dayMarkedForCompletion: this.state.dayMarkedForCompletion
+        }
+        axios.put(`https://todouserapi.herokuapp.com/api/${id}/todo/${userId}`, body)
             .then((response) => {
                 window.location = "/todos"
             })
@@ -48,12 +51,11 @@ export default class Edit extends Component {
     }
 
     onDateChange(e) {
-        console.log(e.target.value)
+        this.setState({
+            dayMarkedForCompletion: e.target.value
+        })  
     }
 
-
-
-    
     render() {
         return (
             <div>

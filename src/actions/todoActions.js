@@ -1,5 +1,4 @@
 import axios from 'axios';
-import constants from '../constants';
 
 export const createTodo = (todo) => {
     let userId = localStorage.getItem('userId');

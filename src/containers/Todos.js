@@ -80,12 +80,13 @@ export default class Todos extends Component {
                             {
                             this.state.todos.map((result, key) => {
                                     return (
-                                        <Link to={`/todos/${result.id}/edit?title=${result.title}`} key={key} className="dp-card">
+                                        <Link to={`/todos/${result.id}/edit?title=${result.title}&date=${result.dayMarkedForCompletion}`} key={key} className="dp-card">
                                             <Card 
                                                 index={key} 
                                                 id={result.id} 
                                                 title={result.title} 
                                                 date={moment(result.createdAt).format('MMM D, YYYY')} 
+                                                completionDate={moment(result.dayMarkedForCompletion).format('MMM D, YYYY')} 
                                                 completeTodo={this.completeTodo} 
                                                 complete={result.complete}
                                                 delete={this.delete} />

@@ -5,8 +5,6 @@ import Button from '../components/button';
 import Todo from '../components/todoForm';
 import H3 from '../components/h3';
 import * as todoActions from '../actions/todoActions';
-import moment from 'moment';
-
 
 export default class Home extends Component {
 
@@ -15,6 +13,7 @@ export default class Home extends Component {
 
         this.state = {
             title: "",
+            dayMarkedForCompletion: "",
             buttonText: "Add Todo"
         }
 
@@ -31,7 +30,10 @@ export default class Home extends Component {
     }
 
     onDateChange(e) {
-        console.log(moment(e.target.value).format('MMM D, YYYY'));
+        this.setState({
+            dayMarkedForCompletion: e.target.value
+        })
+        
     }
 
     createTodo(e) {

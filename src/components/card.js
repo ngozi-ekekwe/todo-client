@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '../components/button';
-import { Link } from 'react-router-dom';
 
 const Card = (props) => {
     return (
@@ -20,7 +19,7 @@ const Card = (props) => {
                 }
             </div>
             <ul className="list-group list-group-flush">
-                <li className="list-group-item">Completion date: <span>{props.date} </span></li>
+                <li className="list-group-item">Completion date: <span>{props.completionDate} </span></li>
             </ul>
             <div className="card-body">
                 <p className="card-title">{props.title}</p>
