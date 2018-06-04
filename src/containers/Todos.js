@@ -6,6 +6,7 @@ import Card from '../components/card'
 import axios from 'axios';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import * as todoActions from '../actions/todoActions';
 
 
 export default class Todos extends Component {
@@ -27,8 +28,8 @@ export default class Todos extends Component {
     }
 
     listTodos() {
-        let userId = localStorage.getItem('userId');
-        axios.get(`https://todouserapi.herokuapp.com/api/user/todos/${userId}`)
+         let userId = localStorage.getItem('userId');
+            todoActions.listTodos(userId)
             .then((response) => {
                 this.setState({
                     todos: response.data.todo
@@ -86,7 +87,7 @@ export default class Todos extends Component {
                                                 id={result.id} 
                                                 title={result.title} 
                                                 date={moment(result.createdAt).format('MMM D, YYYY')} 
-                                                completionDate={moment(result.dayMarkedForCompletion).format('MMM D, YYYY')} 
+                                                completionDate={moment(result.dayMarkedForCompletion).fromNow()} 
                                                 completeTodo={this.completeTodo} 
                                                 complete={result.complete}
                                                 delete={this.delete} />

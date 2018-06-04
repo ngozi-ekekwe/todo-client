@@ -14,18 +14,9 @@ export const createTodo = (todo) => {
         }); 
 }
 
-export const listTodos = () => {
-    let userId = localStorage.getItem('userId');
-    axios.get(`https://todouserapi.herokuapp.com/api/user/todos/${userId}`)
-        .then((response) => {
-            this.setState({
-                todos: response.data.todo
-            })
-        })
-        .catch((err) => {
-            if (err) {
-            }
-        }); 
+export const listTodos = (userId) => {
+   return axios.get(`https://todouserapi.herokuapp.com/api/user/todos/${userId}`)
+        
 }
 
 export const updateNote = (e, id, index) => {
